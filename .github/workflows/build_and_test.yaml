@@ -1,6 +1,6 @@
 name: Continuous Integration for rolling
 
-on: [pull_request]
+on: [push]
 
 jobs:
   build_and_test:
@@ -13,15 +13,10 @@ jobs:
       with:
         install-connext: true
         use-ros2-testing: true
-<<<<<<< HEAD
         required-ros-distributions: rolling
     - name: Build and run test
       id: action-ros-ci
       uses: ros-tooling/action-ros-ci@v0.3
-=======
-        required-ros-distributions: humble
-    - uses: ros-tooling/action-ros-ci@v0.2
->>>>>>> taDachs/code-generation
       with:
         package-name: domain_bridge
         target-ros2-distro: humble
